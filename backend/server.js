@@ -26,10 +26,7 @@ app.get('/api/test', (req, res) => {
 });
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://prashantmaurya307:Kartik%40701@cluster0.x4l2566.mongodb.net/', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
+mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://prashantmaurya307:Kartik%40701@cluster0.x4l2566.mongodb.net/')
     .then(() => console.log(' Aur  ab MongoDB connected to Atlas bhi ho gaya hai!✅'))
     .catch(err => console.log('MongoDB connection error:', err));
 
