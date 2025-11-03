@@ -1,13 +1,18 @@
-# Quiz Scoring System Implementation
+# Deployment TODO
 
-## Pending Tasks
-- [x] Create ScoreBoard.jsx component to display score after submission (e.g., 3/10)
-- [x] Update QuizAttempt.jsx to navigate to ScoreBoard instead of showing alert
-- [x] Add route for ScoreBoard in App.jsx
-- [ ] Test the scoring functionality by running the app and submitting a quiz
+## Frontend Deployment to Netlify
+- [x] Build frontend for production
+- [x] Add _redirects file for SPA routing
+- [ ] Upload dist folder to Netlify
+- [x] Set VITE_API_URL environment variable in Netlify
+- [ ] Deploy and test live application
 
-## Completed Tasks
-- [x] Read QuizAttempt.jsx to understand current submission flow
-- [x] Read attempts.js to see how submissions are processed
-- [x] Modify backend to calculate score on submission (already implemented)
-- [x] Update frontend to display score after submission (partially done, needs refinement)
+## Backend Integration
+- [x] Configure frontend to use live backend URL
+- [x] Test backend connectivity
+- [x] Verify CORS configuration
+
+## Testing
+- [x] Test backend /api/test endpoint
+- [x] Test frontend local development
+- [ ] Test live deployment after upload
