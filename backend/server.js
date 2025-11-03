@@ -18,7 +18,7 @@ app.use('/api/quizzes', require('./routes/quizzes'));
 app.use('/api/attempts', require('./routes/attempts'));
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/quizverse', {
+mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://prashantmaurya307:Kartik%40701@cluster0.x4l2566.mongodb.net/', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
