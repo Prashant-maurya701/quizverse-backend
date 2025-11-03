@@ -17,6 +17,11 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/quizzes', require('./routes/quizzes'));
 app.use('/api/attempts', require('./routes/attempts'));
 
+// Test route
+app.get('/api/test', (req, res) => {
+    res.json({ message: 'Backend is working!', status: 'success' });
+});
+
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://prashantmaurya307:Kartik%40701@cluster0.x4l2566.mongodb.net/', {
     useNewUrlParser: true,
