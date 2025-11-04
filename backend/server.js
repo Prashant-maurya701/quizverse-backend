@@ -8,7 +8,9 @@ dotenv.config();
 const app = express();
 
 // Middleware
-const corsOrigins = process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',') : ["https://quizverses.netlify.app", "http://localhost:3000", "http://localhost:5173"];
+const defaultOrigins = ["https://quizverses.netlify.app", "http://localhost:3000", "http://localhost:5173"];
+const envOrigins = process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',') : [];
+const corsOrigins = [...defaultOrigins, ...envOrigins];
 
 app.use(cors({
     origin: corsOrigins,
