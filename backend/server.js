@@ -8,8 +8,10 @@ dotenv.config();
 const app = express();
 
 // Middleware
+const corsOrigins = process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',') : ["https://quizverses.netlify.app", "http://localhost:3000", "http://localhost:5173"];
+
 app.use(cors({
-    origin: "https://quizverses.netlify.app", // ✅ frontend ka live URL
+    origin: corsOrigins,
     credentials: true
 }));
 app.use(express.json({ limit: '10mb' }));
@@ -27,8 +29,8 @@ app.get('/api/test', (req, res) => {
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://prashantmaurya307:Kartik%40701@cluster0.x4l2566.mongodb.net/')
-    .then(() => console.log(' Aur  ab MongoDB connected to Atlas bhi ho gaya hai!✅'))
+    .then(() => console.log('MongoDB connected to Atlas successfully! ✅'))
     .catch(err => console.log('MongoDB connection error:', err));
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(` ham log server connect kar liya hai. Server running on port:- ${PORT}✅`));
+app.listen(PORT, () => console.log(`Server running on port: ${PORT} ✅`));
